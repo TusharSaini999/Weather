@@ -6,4 +6,4 @@ jobs:
         env:
           myapi: ${{ secrets.weatherapi }}
         run: |
-          node my-action.js
+          node main.js
