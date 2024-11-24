@@ -14,8 +14,10 @@ The Weather Map Website is an interactive web application that allows users to v
 - **Dynamic Weather Layers (Optional)** 🌈: Add weather overlays like temperature 🌡️, pressure 🌬️, and wind speed 🌪️ directly on the map.  
 
 --- 
+
 ## Hosting 
-- [view](https://weather-qu.netlify.app/) for weather webiste. https://weather-qu.netlify.app/ 🌦️
+- [view](https://weather-qu.netlify.app/) for weather webiste https://weather-qu.netlify.app/ 🌦️
+
 --- 
 
 ## Usage 🚀  
