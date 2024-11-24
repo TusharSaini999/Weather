@@ -1,10 +1,6 @@
 /* Devloped by Tushar Saini*/
 
-<<<<<<< HEAD
 const apiKey = MY_SECRET;
-=======
-const apiKey = process.env.MY_SECRET;//replase api key
->>>>>>> 677f16d1e9cb0cedab0d06f544642e34deb0e315
 let p=document.getElementById("er");
 let pt=document.getElementById("et");
 
