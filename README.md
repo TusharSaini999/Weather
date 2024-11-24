@@ -15,7 +15,7 @@ The Weather Map Website is an interactive web application that allows users to v
 
 --- 
 ## Hosting 
-- [view]() for weather webiste. 🌦️
+- [view](https://weather-qu.netlify.app/) for weather webiste. https://weather-qu.netlify.app/ 🌦️
 --- 
 
 ## Usage 🚀  
