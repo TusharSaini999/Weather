@@ -1,6 +1,6 @@
 /* Devloped by Tushar Saini*/
 
-const apiKey = WEATHERAPI;
+const apiKey = weatherapi;
 let p=document.getElementById("er");
 let pt=document.getElementById("et");
 
