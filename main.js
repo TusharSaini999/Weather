@@ -1,6 +1,6 @@
 /* Devloped by Tushar Saini*/
 
-const apiKey = weatherapi;
+const apiKey = ${{secrets.weatherapi}};//replase api key
 let p=document.getElementById("er");
 let pt=document.getElementById("et");
 
