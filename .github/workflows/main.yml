@@ -1,0 +1,9 @@
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run my JavaScript action
+        env:
+          myapi: ${{ secrets.weatherapi }}
+        run: |
+          node my-action.js
