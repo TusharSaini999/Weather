@@ -1,6 +1,6 @@
 /* Devloped by Tushar Saini*/
 
-const apiKey = process.env.API_KEY;//replase api key
+const apiKey = process.env.myapi;//replase api key
 let p=document.getElementById("er");
 let pt=document.getElementById("et");
 
