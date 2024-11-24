@@ -1,4 +1,4 @@
-name: Use GitHub Secrets
+name: Use Secrets in JavaScript
 
 on:
   push:
@@ -13,9 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Use Secret in JS
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run JavaScript with Secret
         env:
           MY_SECRET: ${{ secrets.weatherapi}}
         run: |
-          echo "Running a script with a secret"
-          node -e "console.log('Secret:', process.env.MY_SECRET)"
+          node main.js
