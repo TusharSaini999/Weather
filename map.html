@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css">
+    <style>
+        #map {
+            height: 100vh;
+        }
+        #legend {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            line-height: 1.5;
+            z-index: 1000;
+        }
+
+        #legend h4 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        #legend div {
+            margin-bottom: 10px;
+        }
+
+        #legend strong {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
+        #legend div div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2px;
+        }
+
+        #legend div div span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border-radius: 4px;
+        }
+        .leaflet-control-layers {
+            display: none;
+        }
+        #weather-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 250px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            z-index: 1000;
+            display: none; /* Initially hidden */
+        }
+
+        #weather-info h4 {
+            margin-top: 0;
+        }
+        .leaflet-control-geocoder {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+.leaflet-control-geocoder input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s;
+}
+/* Style for the search button */
+.leaflet-control-geocoder button {
+    background-color: #7becf4;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+    color: white;
+    font-size: 18px;
+}
+
+
+/* Adjusting the size of the search container */
+.leaflet-control-geocoder.form input[type="text"] {
+    width: 220px;
+    transition: width 0.3s ease-in-out;
+}
+
+.leaflet-control-geocoder input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+/* Make the search box responsive */
+@media (max-width: 600px) {
+    .leaflet-control-geocoder {
+        width: 90%;
+        left: 5%;
+    }
+
+    .leaflet-control-geocoder input[type="text"] {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+    <div id="weather-info">
+        <h4>Weather Info</h4>
+        <div><strong>Pressure:</strong> <span id="pressure"></span> hPa</div>
+        <div><strong>Humidity:</strong> <span id="humidity"></span> %</div>
+        <div><strong>Wind Speed:</strong> <span id="wind-speed"></span> m/s</div>
+    </div>
+    <div id="legend">
+        <div><strong>Choose Layer:</strong></div>
+        <label><input type="radio" name="fav_language" id="tempCheckbox"> Temperature</label><br>
+        <label><input type="radio" name="fav_language" id="pressureCheckbox"> Pressure</label>
+
+        <div id="temp-legend">
+            <strong>Temperature:</strong>
+            <div><span style="background:#6495ED;"></span> Very Cold</div>
+            <div><span style="background:#87CEFA;"></span> Cold</div>
+            <div><span style="background:#00FF7F;"></span> Normal</div>
+            <div><span style="background:#FFD700;"></span> Warm</div>
+            <div><span style="background:#FF8C00;"></span> Hot</div>
+            <div><span style="background:#FF4500;"></span> Very Hot</div>
+        </div>
+        <div id="pressure-legend">
+            <strong>Air Pressure (hPa):</strong>
+            <div><span style="background:#00CED1;"></span> Very Low</div>
+            <div><span style="background:#1E90FF;"></span> Low</div>
+            <div><span style="background:#32CD32;"></span> Normal</div>
+            <div><span style="background:#FFD700;"></span> High</div>
+            <div><span style="background:#FF6347;"></span> Very High</div>
+        </div>
+    </div>
+
+    <!-- Leaflet.js Library -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

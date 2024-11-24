@@ -1,0 +1,85 @@
+<!-- Devloped By Tushar Saini-->
+<!DOCTYPE html>    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png" >
+</head>
+<body>
+ <div class="container">
+    <div id="tu">
+    <h1 id="g6">Weather</h1>
+      <header id="head">
+             <div id="hd">
+               <input type="text" id="cityInput" placeholder="Enter city name" required>             
+               <button id="getWeatherButton" onclick="getWeather()" >Get Weather 🔍</button>
+               <button id="getLocationWeatherButton" onclick="getLocationWeather()">Get Weather for My Location<svg width="18" height="18" viewBox="-4 -3 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="Red"/>
+</svg></button>
+<a href="map.html" ><button >Map</button></a>
+              </div>
+      </header>
+      <main>
+         <p id="et"></p>
+         <p id="er"></p>
+         
+        <div class="weather">
+          <div id="a1">
+            <div id="pad">
+            <div id="des">
+            <p id="emoji">🔍</p>
+            <p id="description">Weather</p>
+            </div>
+            </div>
+            
+         <div id="dad">
+            <div class="asc">
+            <p id="temperature">?</p>
+            </div>
+            
+            <div class="asc">
+            <h2 id="city">?</h2>
+            <p id="date">D/M/Y</p>
+            <p id="time">H/M</p>       
+            </div>
+            
+            <div class="asc">
+            <h2 id="s">Sun Time☀️</h2>
+            <p id="sr">H/M</p>
+            <p id="ss">H/M</p>       
+            </div>
+        </div>
+     </div>
+     <div id="a2">
+            <div id="ad">
+            <p id="humidity" class="com">Humidity: %</p>
+            <p id="windSpeed" class="com">Wind Speed: m/s</p>
+            <p id="clouds" class="com">Cloudiness: %</p>
+            <p id="pressure" class="com">Air Pressure: hpa</p>
+            </div>
+            
+            <div id="ad">
+            <p id="uv" class="com">UV :</p>
+            <p id="air" class="com">Air quality :</p>
+            <p id="vis" class="com">Visibility :</p>
+            <p id="feel" class="com">Feel Like :</p>
+            </div>
+     </div>
+        
+        <h2 id="for">Five Day Weather</h2>
+    
+        <div id="forecast"></div>
+        </main>
+        
+        
+        </div>
+        
+    </div>
+</div>
+    
+   <script src="main.js"></script>
+</body>
+</html>
