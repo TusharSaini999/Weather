@@ -1,9 +1,21 @@
+name: Use GitHub Secrets
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  my-job:
+  use-secret:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Run my JavaScript action
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use Secret in JS
         env:
-          myapi: ${{ secrets.weatherapi }}
+          MY_SECRET: ${{ secrets.weatherapi}}
         run: |
-          node main.js
+          echo "Running a script with a secret"
+          node -e "console.log('Secret:', process.env.MY_SECRET)"
