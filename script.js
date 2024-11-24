@@ -8,7 +8,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Weather API Key
-const apiKey = '080f31b85b696163705270e96865ae9a';
+const apiKey = WEATHERAPI;
 
 // Temperature and Pressure layers from OpenWeatherMap
 const tempLayer = L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${apiKey}`, {
