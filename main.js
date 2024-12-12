@@ -1,6 +1,6 @@
 /* Devloped by Tushar Saini*/
 
-const apiKey = process.env.MY_SECRET;
+const apiKey = "5de3ac2e0ef7f3203f3dc2c34c543bee";
 let p=document.getElementById("er");
 let pt=document.getElementById("et");
 
